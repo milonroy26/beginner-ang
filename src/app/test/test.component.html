@@ -1,0 +1,70 @@
+<p> Topic: <br> Define Function. <br> Call function on button click. <br> Params in function.</p>
+<h4 (click)="userName('Milon Roy')">Your Name?</h4>
+<h4> Name: {{getFullName('f', 'l')}} </h4>
+<!-- call functions with different events-->
+<button (click)="getData('hellow')" >Call function</button>
+<br><br>
+<input #input (click)="getData(input.value)" placeholder="click event" type="text"> <br> <br>
+<!-- event keyup -->
+<input #input1 (keyup)="getData(input1.value)" placeholder="keyup value" type="text"> <br><br>
+<!-- event keydown -->
+<input #input2 (keydown)="getData(input2.value)" placeholder="keydown value" type="text"> <br><br>
+<!-- blur -->
+<input #input3 (blur)="getData(input3.value)" placeholder="blur value" type="text"><br><br>
+<!-- input -->
+<input #input4 (input)="getData(input4.value)" placeholder="input value" type="text"><br>
+
+<h4 (mouseover)="getData('This is a mouseover')" >Mouseover</h4>
+<h4 (mouseout)="getData('this is a mouseout')" >mouseout</h4>
+<h4 (mouseup)="getData('mouseUp')" >mouseup</h4>
+
+<!-- Get Input Box Value  -->
+<input #value placeholder="Type" type="text">
+<button (click)="getInput(value.value)" >Click</button>
+<h4> {{display}} </h4>
+<!-- Counter example -->
+<button (click)="getCount('decrease')" >+</button>
+<p> {{dplyCount}} </p>
+<button (click)="getCount('increase')" >-</button><br> <br>
+<!-- property binding -->
+<input [disabled]="true" type="text">
+<!-- class binding -->
+<h4 [class.text-red]="myClass" >text red color</h4>
+<h4 [class.text-orange]="orangeColor">Text orange color</h4>
+<!-- multi class binding -->
+<h4 [ngStyle]="multiStyle" >multi Style</h4>
+<!-- style binding -->
+<p [style.color]="'red'">Give me red</p>
+<p [style.backgroundColor]="'pink'" >Give me background color</p>
+<p [style.fontSize]="'25px'">style binding</p>
+<!-- conditionaly style -->
+<h4 [style.color]="hasEror? 'hotpink' : 'navy'">conditionaly style</h4>
+<button [style.backgroundColor]="getColor()" >click</button>
+<!-- multistyle -->
+
+
+<!-- ng if else -->
+<h4 *ngIf="sow">Basic ng if</h4>
+<!-- next -->
+<h4 *ngIf="title ==='programmer'; else elseBlock ">I am a Programmer</h4>
+<ng-template #elseBlock>
+    <h4>I am a student</h4>
+</ng-template>
+
+<!-- Switch case -->
+
+<!-- make arry of object -->
+<h3 *ngFor="let student of students">My Name Is: {{student}} </h3>
+
+<!-- apply loop on array object -->
+<h3 *ngFor="let userD of userDetails"> I am {{userD.name}} , my gmail: {{userD.gmail}} and Id {{userD.Id} </h3>
+
+<!-- nested loop -->
+<ul style="list-style: none;" *ngFor="let stu of stuDetails">
+    <li>Name: {{stu.name}} </li>
+    <li>id: {{stu.id}} </li>
+    <li>Favorite: </li>
+    <ul style="list-style: none;" *ngFor="let favo of stu.favorite">
+        <li> {{favo}} </li>
+    </ul>
+</ul>
